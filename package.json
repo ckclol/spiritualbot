@@ -1,0 +1,26 @@
+{
+  "name": "kingcraftbot",
+  "version": "1.0.0",
+  "description": "made by ckc",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "/help"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jefftcf/kingcraftbot.git"
+  },
+  "keywords": [
+    "kcbot"
+  ],
+  "author": "jefftcf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jefftcf/kingcraftbot/issues"
+  },
+  "homepage": "https://github.com/jefftcf/kingcraftbot#readme"
+}
