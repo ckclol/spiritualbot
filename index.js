@@ -17,7 +17,7 @@ client.on("ready", () => {
 
 client.on('message', message => {
     if (message.content === '/help') {
-        const hp = Discord client.MessageEmbed()
+        const hp = new Discord.MessageEmbed()
             .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
             .setTitle('Help')
@@ -36,7 +36,7 @@ client.on('message', message => {
         message.channel.send(hp)
     };
     if (message.content === '/members-help') {
-        const mh = Discord client.MessageEmbed()
+        const mh = new Discord.MessageEmbed()
             .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
             .setTitle('Member Help')
@@ -46,7 +46,7 @@ client.on('message', message => {
             message.channel.send(mh)
     };
     if (message.content === '/members tcf/playz') {
-        const ckc = Discord client.MessageEmbed()
+        const ckc = new Discord.MessageEmbed()
             .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
             .setTitle('Chaukachun edu.')
@@ -59,7 +59,7 @@ client.on('message', message => {
         message.channel.send(ckc)
     };
     if (message.content === '/members Moose') {
-        const moose = Discord client.MessageEmbed()
+        const moose = new Discord.MessageEmbed()
             .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
             .setTitle('Chaukachun123.')
@@ -73,7 +73,7 @@ client.on('message', message => {
         message.channel.send('Chaukachun123, The no account in this server, good at lots of stuff. **SKILLS** Building 78/100, Commanding 60/100, Redstone 90/100, Stuff Maker 50/100')
     };
     if (message.content === '/members TECH') {
-        const tech = Discord client.MessageEmbed()
+        const tech = new Discord.MessageEmbed()
             .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
             .setTitle('TechnicRain8.')
@@ -86,7 +86,7 @@ client.on('message', message => {
         message.channel.send(tech)
     };
     if (message.content === '/members wolfy dude') {
-        const lyon = Discord client.MessageEmbed()
+        const lyon = new Discord.MessageEmbed()
             .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
             .setTitle('Billyon133.')
@@ -99,7 +99,7 @@ client.on('message', message => {
         message.channel.send(lyon)
     };
     if (message.content === '/members Pgz_epicgamerplayz') {
-        const epic = Diuscord client.MessageEmbed()
+        const epic = new Discord.MessageEmbed()
             .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
             .setTitle('CutSkydiver16.')
