@@ -7,8 +7,7 @@ const pbhelp = new Discord.MessageEmbed()
     .setTitle('Help')
     .addField('do /pb {bot-name}, {reason}', 'space is replaced with -', true)
     .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png');
-
-
+const prefix = '/';
 
 
 
@@ -25,7 +24,7 @@ client.on("ready", () => {
 client.on('message', message => {
     if (message.content === '/help') {
         const hp = new Discord.MessageEmbed()
-            .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
+            .setAuthor('TCFPlayz, 1.P(1.8)', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
             .setTitle('Help')
             .setDescription('This is a place to tell you the commands.')
@@ -33,14 +32,13 @@ client.on('message', message => {
             .addField('Facts.', 'Please do /fact', true)
             .addField('Invite.', 'Support ckc by inviting the bot!(do /invite)')
             .addField('Guilds.', 'check how many servers has kingcraftbot joined?', true)
-            .addField('ADMIN LIST(DEV)', true)
-            .addField('Pend-Bot', '/pb.', true)
+            .addField('ADMIN LIST(DEV)')
             .addField('Giveaways.', 'Still in development.', true)
             .addField('Challenges.', 'Still in development.', true)
-            .addField('Debug/Perks (DEV', true)
+            .addField('Perks (DEV)')
             .addField('Perks.', 'In development.', true)
-            .addField('Debug.', 'Find :)', true)
-            .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
+            .addField('More', 'More in 2.0', true)
+            .setFooter('By TCFPlayz, 1.P(1.8)', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
         message.channel.send(hp)
     };
     if (message.content === '/members-help') {
@@ -59,7 +57,7 @@ client.on('message', message => {
             .setColor('#dbce0d')
             .setTitle('Chaukachun edu.')
             .setDescription('The owner of this server, trash at lots of stuff.')
-            .addField('**SKILLS**', true)
+            .addField('**SKILLS**')
             .addField('Building', '60/100', true)
             .addField('Command', '100/100', true)
             .addField('Redstone', '79/100', true)
@@ -72,7 +70,7 @@ client.on('message', message => {
             .setColor('#dbce0d')
             .setTitle('Chaukachun123.')
             .setDescription('The no account in this server, good at lots of stuff.')
-            .addField('**SKILLS**', true)
+            .addField('**SKILLS**')
             .addField('Building', '78/100', true)
             .addField('Command', '60/100', true)
             .addField('Redstone', '90/100', true)
@@ -86,7 +84,7 @@ client.on('message', message => {
             .setColor('#dbce0d')
             .setTitle('TechnicRain8.')
             .setDescription('The best in this server, good at everything.')
-            .addField('**SKILLS**', true)
+            .addField('**SKILLS**')
             .addField('Building', '100/100', true)
             .addField('Command', '60/100', true)
             .addField('Redstone', '98/100', true)
@@ -99,7 +97,7 @@ client.on('message', message => {
             .setColor('#dbce0d')
             .setTitle('Billyon133.')
             .setDescription('The noob in this server, cool but bad.')
-            .addField('**SKILLS**', true)
+            .addField('**SKILLS**')
             .addField('Building', '100/100', true)
             .addField('Command', '10/100', true)
             .addField('Redstone', '60/100', true)
@@ -112,7 +110,7 @@ client.on('message', message => {
             .setColor('#dbce0d')
             .setTitle('CutSkydiver16.')
             .setDescription('The pvp master in this server, good at server games.')
-            .addField('**SKILLS**', true)
+            .addField('**SKILLS**')
             .addField('Building', '86/100', true)
             .addField('Command', '92/100', true)
             .addField('Redstone', '85/100', true)
@@ -126,7 +124,7 @@ client.on('message', message => {
             .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
             .setTitle('Facts')
-            .addField(facts[fact], true)
+            .addField(facts[fact])
             .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
         message.channel.send(factss)
     };
@@ -134,27 +132,66 @@ client.on('message', message => {
         message.channel.send('')
     };
     if (message.content === '/debug perks-all') { };
-    (message.content.startsWith('/pb')); {
-        const args = message.content.slice(prefix.length).trim().split(' ');
-        if (!args.length) {
-            return message.channel.send(pbhelp)
-        }
-        const botname = new Discord.MessageEmbed()
-            .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
-            .setColor('#dbce0d')
-            .addTitle('Bot Name')
-            .addField(args, true)
-        ckcid.send(botname)
-    };
     if (message.content === '/invite') {
         const invite = new Discord.MessageEmbed()
             .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
             .setTitle('Invite link.')
-            .addField('https://discord.com/api/oauth2/authorize?client_id=740846161539366912&permissions=8', true)
+            .addField('https://discord.com/api/oauth2/authorize?client_id=740846161539366912&permissions=8')
             .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
-        message.channel.send(invite)
+        message.channel.send(invite);
+    };
+    if (message.content.startsWith("/giveaways")) {
+        if (member.HasPermission('ADMINSTATIOR')) {
+            var usrtxt = message.content;
+            if (!usrtxt.length) {
+                message.channel.send('Giveaways. Please do /giveaways {what} {desc} {time}(if there is any spaces use -)')
+            }
+            var txtspaced = usrtxt.split(" ");
+            var remove1 = txtspaced.replace('/giveaways', '');
+            var giveawaytext = remove1.replace('-', ' ');//wordediting
+            var firstWords = [];
+            for (var i = 0; i < codelines.length; i++) {
+                var codeLine = codelines[i];
+                var firstWord = codeLine.substr(0, codeLine.indexOf(" "));
+                firstWords.push(firstWord);
+            }
+            const giveawayembed = new Discord.MessageEmbed()
+                .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
+                .setColor('#dbce0d')
+                .setTitle(firstWord[2])
+                .setDescription(firstWord[3])
+                .addField('Until:', firstWord[4], true)
+                .addField('https://discord.com/api/oauth2/authorize?client_id=740846161539366912&permissions=8', true)
+                .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
+        }
     }
-})
+         if (message.content.startsWith("/challenges")) { 
+             if (member.HasPermission('ADMINSTATIOR')) {
+                 var usrtxt1 = message.content;
+                 if (!usrtxt1.length) {
+                     message.channel.send('Challenges. Please use /challenges {what} {desc}(if there is any spaces use -)')
+                 }
+                 var txtspaced1 = usrtxt1.split(" ");
+                 var remove1 = txtspaced1.replace('/challenges', '');
+                 var giveawaytext1 = remove1.replace('-', ' ');//wordediting
+                 var firstWordss = [];
+                 for (var i = 0; i < codelines.length; i++) {
+                     var codeLine = codelines[i];
+                     var firstWordw = codeLine.substr(0, codeLine.indexOf(" "));
+                     firstWordss.push(firstWordw);
+                     const giveawayembed = new Discord.MessageEmbed()
+                         .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
+                         .setColor('#dbce0d')
+                         .setTitle(firstWordw[2])
+                         .setDescription(firstWordw[3])
+                         .addField('**24 HOURS**')
+                         .addField('https://discord.com/api/oauth2/authorize?client_id=740846161539366912&permissions=8', true)
+                         .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png');
+                 }
+             };
 
-    client.login('NzQwODQ2MTYxNTM5MzY2OTEy.Xyu8wQ.8OfdJzQF7Hbul-zqZNTLMTBjUpU')
+                client.login('NzQwODQ2MTYxNTM5MzY2OTEy.Xyu8wQ.8OfdJzQF7Hbul-zqZNTLMTBjUpU')
+            }
+    })
+
