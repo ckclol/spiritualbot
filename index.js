@@ -35,7 +35,7 @@ client.on('message', message => {
             .addField('Invite.', 'Support ckc by inviting the bot!(do /invite)')
             .addField('Guilds.', 'check how many servers has kingcraftbot joined?', true)
             .addField('ADMIN LIST(DEV)', true)
-            .addField('Pend-Bot', 'Do /pb.', true)
+            .addField('Pend-Bot', '/pb.', true)
             .addField('Giveaways.', 'Still in development.', true)
             .addField('Challenges.', 'Still in development.', true)
             .addField('Debug/Perks (DEV', true)
@@ -143,11 +143,11 @@ client.on('message', message => {
             .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
         message.channel.send(invite)
     };
-    if (message.content === '/debug perks-all') { }
-    if (message.content.startsWith('/pb')) { 
+    if (message.content === '/debug perks-all') { };
+    (message.content.startsWith('/pb')); {
         const args = message.content.slice(prefix.length).trim().split(' ');
-    if (!args.length) {
-        return message.channel.send(pbhelp)
+        if (!args.length) {
+            return message.channel.send(pbhelp)
         }
         const botname = new Discord.MessageEmbed()
             .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
@@ -155,10 +155,6 @@ client.on('message', message => {
             .addTitle('Bot Name')
             .addField(args, true)
         ckcid.send(botname)
-    }
-        
-
-   
-        
+    };
     client.login('NzQwODQ2MTYxNTM5MzY2OTEy.Xyu8wQ.8OfdJzQF7Hbul-zqZNTLMTBjUpU')
 })
