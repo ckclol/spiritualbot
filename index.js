@@ -141,6 +141,6 @@ client.on('message', message => {
             .addField('https://discord.com/api/oauth2/authorize?client_id=740846161539366912&permissions=8', true)
             .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
         message.channel.send(invite)
-    }
+    };
     client.login('NzQwODQ2MTYxNTM5MzY2OTEy.Xyu8wQ.8OfdJzQF7Hbul-zqZNTLMTBjUpU')
-})
+});
