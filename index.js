@@ -17,25 +17,99 @@ client.on("ready", () => {
 
 client.on('message', message => {
     if (message.content === '/help') {
-        message.channel.send('1. Member list (/members-help), 2. Facts (/facts), 3. Date of stuff (/date-help), 4. PendBot (/pb-ckc)')
+        const hp = Discord client.MessageEmbed()
+            .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
+            .setColor('#dbce0d')
+            .setTitle('Help')
+            .setDescription('This is a place to tell you the commands.')
+            .addField('Member list, ratings. (SMP)', 'Please do /members-help', true)
+            .addField('Facts.', 'Please do /fact', true)
+            .addField('Date.', 'Please do /date-help', true)
+            .addField('ADMIN LIST(DEV)', true)
+            .addField('Pend-Bot', 'Still in development.', true)
+            .addField('Giveaways.', 'Still in development.', true)
+            .addField('Challenges.', 'Still in development.', true)
+            .addField('Debug/Perks (DEV', true) \
+            .addField('Perks.', 'In development.', true)
+            .addField('Debug.', 'Find :)', true)
+            .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
+        message.channel.send(hp)
     };
     if (message.content === '/members-help') {
-        message.channel.send('Which Member would you like to inspect?( Look at @Members ), do /members **member u want** (All the Nicknames) ')
+        const mh = Discord client.MessageEmbed()
+            .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
+            .setColor('#dbce0d')
+            .setTitle('Member Help')
+            .setDescription('Which members you wanna inspect? (SMP)')
+            .addField('Command', '/members {nickname}(tech as "TECH", Moses as "{Moose")', true)
+            .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
+            message.channel.send(mh)
     };
     if (message.content === '/members tcf/playz') {
-        message.channel.send('Chaukachun edu, The owner of this server, trash at lots of stuff. **SKILLS** Building 60/100, Commanding 87/100, Redstone 70/100, Stuff Maker 98/100')
+        const ckc = Discord client.MessageEmbed()
+            .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
+            .setColor('#dbce0d')
+            .setTitle('Chaukachun edu.')
+            .setDescription('The owner of this server, trash at lots of stuff.')
+            .addField('**SKILLS**', true)
+            .addField('Building', '60/100', true)
+            .addField('Command', '100/100', true)
+            .addField('Redstone', '79/100', true)
+            .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
+        message.channel.send(ckc)
     };
     if (message.content === '/members Moose') {
+        const moose = Discord client.MessageEmbed()
+            .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
+            .setColor('#dbce0d')
+            .setTitle('Chaukachun123.')
+            .setDescription('The no account in this server, good at lots of stuff.')
+            .addField('**SKILLS**', true)
+            .addField('Building', '78/100', true)
+            .addField('Command', '60/100', true)
+            .addField('Redstone', '90/100', true)
+            .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
+        message.channel.send(moose)
         message.channel.send('Chaukachun123, The no account in this server, good at lots of stuff. **SKILLS** Building 78/100, Commanding 60/100, Redstone 90/100, Stuff Maker 50/100')
     };
-    if (message.content === '/members =[TECH]= ') {
-        message.channel.send('TechnicRain8, The best in this server, good at everything. **SKILLS** Building 100/100, Commanding 80/100, Redstone 80/100, Stuff Maker 100/100')
+    if (message.content === '/members TECH') {
+        const tech = Discord client.MessageEmbed()
+            .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
+            .setColor('#dbce0d')
+            .setTitle('TechnicRain8.')
+            .setDescription('The best in this server, good at everything.')
+            .addField('**SKILLS**', true)
+            .addField('Building', '100/100', true)
+            .addField('Command', '60/100', true)
+            .addField('Redstone', '98/100', true)
+            .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
+        message.channel.send(tech)
     };
     if (message.content === '/members wolfy dude') {
-        message.channel.send('Billyon133, The noob of this server, cool but bad at lots of stuff. **SKILLS** Building 100/100, Commanding 39/100, Redstone 12/100, Stuff Maker 70/100')
+        const lyon = Discord client.MessageEmbed()
+            .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
+            .setColor('#dbce0d')
+            .setTitle('Billyon133.')
+            .setDescription('The noob in this server, cool but bad.')
+            .addField('**SKILLS**', true)
+            .addField('Building', '100/100', true)
+            .addField('Command', '10/100', true)
+            .addField('Redstone', '60/100', true)
+            .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
+        message.channel.send(lyon)
     };
     if (message.content === '/members Pgz_epicgamerplayz') {
-        message.channel.send('CutSkydiver16, The opposite of this server, disagrees lots of stuff. **SKILLS** Building 86/100, Commanding 60/100, Redstone 80/100, Stuff Maker 100/100')
+        const epic = Diuscord client.MessageEmbed()
+            .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
+            .setColor('#dbce0d')
+            .setTitle('CutSkydiver16.')
+            .setDescription('The pvp master in this server, good at server games.')
+            .addField('**SKILLS**', true)
+            .addField('Building', '86/100', true)
+            .addField('Command', '92/100', true)
+            .addField('Redstone', '85/100', true)
+            .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
+        message.channel.send(ckc)
     };
     if (message.content === '/fact') {
         var facts = ["Wolfy dude's name was from a call when ckc called him wolfy dude!","Wolfy dude is also named 'wolfieduediewateriebrownie jakieboie'!","There are 2 old members or just doesn't play bedrock anymore, cuz those two old members found bedrock impossible to break. They dont know about creative mode.","Tech is called tech cuz tech is tech.","Ckc, aka seekaesea.","Some says tech's item is still in the nether in S2","Kingcraft was made in 2020!", "Kingcraft have 5 members!", "We have weird nicknames!", "Moss stone was invented by moses because his nickname was moss!", "This community is cool!", "Moses is kinda noob", "Challenges was made by CUT AND WOLF!", "Giveaways are for the new pe.kcserver.ga", "Open kingcraft", "e", "More facts coming soon!", "Facts were from BCpig"];
