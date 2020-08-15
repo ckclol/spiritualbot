@@ -11,4 +11,4 @@ DEBUG  };
             .addTitle('Bot Name')
             .addField(args, true)
         ckcid.send(botname)
-    }
+    };
