@@ -24,12 +24,11 @@ client.on('message', message => {
             .setDescription('This is a place to tell you the commands.')
             .addField('Member list, ratings. (SMP)', 'Please do /members-help', true)
             .addField('Facts.', 'Please do /fact', true)
-            .addField('Date.', 'Please do /date-help', true)
             .addField('ADMIN LIST(DEV)', true)
             .addField('Pend-Bot', 'Still in development.', true)
             .addField('Giveaways.', 'Still in development.', true)
             .addField('Challenges.', 'Still in development.', true)
-            .addField('Debug/Perks (DEV', true) \
+            .addField('Debug/Perks (DEV', true)
             .addField('Perks.', 'In development.', true)
             .addField('Debug.', 'Find :)', true)
             .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
@@ -114,19 +113,13 @@ client.on('message', message => {
     if (message.content === '/fact') {
         var facts = ["Wolfy dude's name was from a call when ckc called him wolfy dude!","Wolfy dude is also named 'wolfieduediewateriebrownie jakieboie'!","There are 2 old members or just doesn't play bedrock anymore, cuz those two old members found bedrock impossible to break. They dont know about creative mode.","Tech is called tech cuz tech is tech.","Ckc, aka seekaesea.","Some says tech's item is still in the nether in S2","Kingcraft was made in 2020!", "Kingcraft have 5 members!", "We have weird nicknames!", "Moss stone was invented by moses because his nickname was moss!", "This community is cool!", "Moses is kinda noob", "Challenges was made by CUT AND WOLF!", "Giveaways are for the new pe.kcserver.ga", "Open kingcraft", "e", "More facts coming soon!", "Facts were from BCpig"];
         var fact = Math.floor(Math.random() * facts.length);
-        message.channel.send(facts[fact])
-    };
-    if (message.content === '/date-help') {
-        message.channel.send('Date! Please type the date you wanna know of, if nothing happens, then that date has nothing to do. Do /date year/month/day ')
-    };
-    if (message.content === '/date-help') {
-        message.channel.send('Date! Please type the date you wanna know of, if nothing happens, then that date has nothing to do. Do /date year/month/day or /date year/month. The bot will only detect from July 19')
-    };
-    if (message.content === '/date 2020/7/19 ') {
-        message.channel.send(' Kingcraft Season 1 ')
-    };
-    if (message.content === '/date 2020/8 ') {
-        message.channel.send(' Kingcraft Season 2, Kingcraft Season 3, Kingcraft Season 3.1, Kingcraft Season 3.11 ')
+        const factss = new Discord.MessageEmbed()
+            .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
+            .setColor('#dbce0d')
+            .setTitle('Facts')
+            .addField(facts[fact], true)
+            .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
+        message.channel.send(factss)
     };
     if (message.content === '/pb-ckc') {
         message.channel.send('Type the bot name like this: /pb-ckc KingcraftBot')
