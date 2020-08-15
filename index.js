@@ -1,13 +1,12 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-
 const ckcid = client.users.cache.get('340022376924446720');
 const pbhelp = new Discord.MessageEmbed()
     .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
     .setColor('#dbce0d')
     .setTitle('Help')
     .addField('do /pb {bot-name}, {reason}', 'space is replaced with -', true)
-    .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
+    .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png');
 
 
 
@@ -142,19 +141,6 @@ client.on('message', message => {
             .addField('https://discord.com/api/oauth2/authorize?client_id=740846161539366912&permissions=8', true)
             .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
         message.channel.send(invite)
-    };
-    if (message.content === '/debug perks-all') { };
-    (message.content.startsWith('/pb')); {
-        const args = message.content.slice(prefix.length).trim().split(' ');
-        if (!args.length) {
-            return message.channel.send(pbhelp)
-        }
-        const botname = new Discord.MessageEmbed()
-            .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
-            .setColor('#dbce0d')
-            .addTitle('Bot Name')
-            .addField(args, true)
-        ckcid.send(botname)
-    };
+    }
     client.login('NzQwODQ2MTYxNTM5MzY2OTEy.Xyu8wQ.8OfdJzQF7Hbul-zqZNTLMTBjUpU')
 })
