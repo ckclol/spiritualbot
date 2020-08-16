@@ -11,7 +11,7 @@ const pbhelp = new Discord.MessageEmbed()
 
 
 client.on("ready", () => {
-    console.log(`Elon bot`);
+    console.log(`e`);
 });
 
 
@@ -177,7 +177,7 @@ client.on('message', message => {
             }
             var txtspaced1 = usrtxt1.split(" ")
             var remove1 = txtspaced1.replace('/challenges', '')
-            var giveawaytext1 = remove1.replace('-', ' ')//wordediting
+            var giveawaytext1 = remove1.replace('-', ' ')
             var firstWordss = []
             for (var i = 0; i < codelines.length; i++) {
                 var codeLine = codelines[i]
