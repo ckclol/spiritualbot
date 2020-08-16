@@ -1,18 +1,17 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const ckcid = client.users.cache.get('340022376924446720');
+const config = require('./token.json')
 const pbhelp = new Discord.MessageEmbed()
     .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
     .setColor('#dbce0d')
     .setTitle('Help')
     .addField('do /pb {bot-name}, {reason}', 'space is replaced with -', true)
     .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png');
-const prefix = '/';
 
 
 
 client.on("ready", () => {
-    console.log(`Bot has started. `);
+    console.log(`Elon bot`);
 });
 
 
@@ -24,7 +23,7 @@ client.on("ready", () => {
 client.on('message', message => {
     if (message.content === '/help') {
         const hp = new Discord.MessageEmbed()
-            .setAuthor('TCFPlayz, 1.P(1.8)', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
+            .setAuthor('TCFPlayz, 1.9', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
             .setTitle('Help')
             .setDescription('This is a place to tell you the commands.')
@@ -38,8 +37,9 @@ client.on('message', message => {
             .addField('Perks (DEV)')
             .addField('Perks.', 'In development.', true)
             .addField('More', 'More in 2.0', true)
-            .setFooter('By TCFPlayz, 1.P(1.8)', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
+            .setFooter('By TCFPlayz, 1.9', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
         message.channel.send(hp)
+        console.log('Help')
     };
     if (message.content === '/members-help') {
         const mh = new Discord.MessageEmbed()
@@ -50,6 +50,7 @@ client.on('message', message => {
             .addField('Command', '/members {nickname}(tech as "TECH", Moses as "Moss")', true)
             .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
         message.channel.send(mh)
+        console.log('meh')
     };
     if (message.content === '/members tcf/playz') {
         const ckc = new Discord.MessageEmbed()
@@ -58,7 +59,7 @@ client.on('message', message => {
             .setTitle('Chaukachun edu.')
             .setDescription('The owner of this server, trash at lots of stuff.')
             .addField('**SKILLS**')
-            .addField('Building', '60/100', true)
+            .addField('Building', '70/100', true)
             .addField('Command', '100/100', true)
             .addField('Redstone', '79/100', true)
             .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
@@ -143,18 +144,18 @@ client.on('message', message => {
     };
     if (message.content.startsWith("/giveaways")) {
         if (member.HasPermission('ADMINSTATIOR')) {
-            var usrtxt = message.content;
+            var usrtxt = message.content
             if (!usrtxt.length) {
                 message.channel.send('Giveaways. Please do /giveaways {what} {desc} {time}(if there is any spaces use -)')
             }
-            var txtspaced = usrtxt.split(" ");
-            var remove1 = txtspaced.replace('/giveaways', '');
-            var giveawaytext = remove1.replace('-', ' ');//wordediting
-            var firstWords = [];
+            var txtspaced = usrtxt.split(" ")
+            var remove1 = txtspaced.replace('/giveaways', '')
+            var giveawaytext = remove1.replace('-', ' ')//wordediting
+            var firstWords = []
             for (var i = 0; i < codelines.length; i++) {
-                var codeLine = codelines[i];
-                var firstWord = codeLine.substr(0, codeLine.indexOf(" "));
-                firstWords.push(firstWord);
+                var codeLine = codelines[i]
+                var firstWord = codeLine.substr(0, codeLine.indexOf(" "))
+                firstWords.push(firstWord)
             }
             const giveawayembed = new Discord.MessageEmbed()
                 .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
@@ -164,34 +165,41 @@ client.on('message', message => {
                 .addField('Until:', firstWord[4], true)
                 .addField('https://discord.com/api/oauth2/authorize?client_id=740846161539366912&permissions=8', true)
                 .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
+            message.channel.send(giveawayembed)
+            message.delete(usrtxt)
         }
     }
-         if (message.content.startsWith("/challenges")) { 
-             if (member.HasPermission('ADMINSTATIOR')) {
-                 var usrtxt1 = message.content;
-                 if (!usrtxt1.length) {
-                     message.channel.send('Challenges. Please use /challenges {what} {desc}(if there is any spaces use -)')
-                 }
-                 var txtspaced1 = usrtxt1.split(" ");
-                 var remove1 = txtspaced1.replace('/challenges', '');
-                 var giveawaytext1 = remove1.replace('-', ' ');//wordediting
-                 var firstWordss = [];
-                 for (var i = 0; i < codelines.length; i++) {
-                     var codeLine = codelines[i];
-                     var firstWordw = codeLine.substr(0, codeLine.indexOf(" "));
-                     firstWordss.push(firstWordw);
-                     const giveawayembed = new Discord.MessageEmbed()
-                         .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
-                         .setColor('#dbce0d')
-                         .setTitle(firstWordw[2])
-                         .setDescription(firstWordw[3])
-                         .addField('**24 HOURS**')
-                         .addField('https://discord.com/api/oauth2/authorize?client_id=740846161539366912&permissions=8', true)
-                         .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png');
-                 }
-             };
-
-                client.login('NzQwODQ2MTYxNTM5MzY2OTEy.Xyu8wQ.8OfdJzQF7Hbul-zqZNTLMTBjUpU')
+    if (message.content.startsWith("/challenges")) {
+        if (member.HasPermission('ADMINSTATIOR')) {
+            var usrtxt1 = message.content;
+            if (!usrtxt1.length) {
+                message.channel.send('Challenges. Please use /challenges {what} {desc}(if there is any spaces use -)')
             }
-    })
+            var txtspaced1 = usrtxt1.split(" ")
+            var remove1 = txtspaced1.replace('/challenges', '')
+            var giveawaytext1 = remove1.replace('-', ' ')//wordediting
+            var firstWordss = []
+            for (var i = 0; i < codelines.length; i++) {
+                var codeLine = codelines[i]
+                var firstWordw = codeLine.substr(0, codeLine.indexOf(" "))
+                firstWordss.push(firstWordw)
+            };
+            const chembed = new Discord.MessageEmbed()
+                .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
+                .setColor('#dbce0d')
+                .setTitle(firstWordw[2])
+                .setDescription(firstWordw[3])
+                .addField('**24 HOURS**')
+                .addField('https://discord.com/api/oauth2/authorize?client_id=740846161539366912&permissions=8', true)
+                .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
+            message.channel.send(chembed)
+            message.delete(usrtxt1)
+        }
+
+    };
+
+
+                client.login(config.token)
+            }
+    )
 
