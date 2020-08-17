@@ -37,16 +37,11 @@ client.on("guildDelete", guild => {
 client.on('message', message => {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
-    if (!message.content.startsWith(prefix)) return;
-    if (command === "ping") {
-        const m =message.channel.send("Ping?");
-        const msc = new Discord.messageEmbed()
-            .setAuthor('TCFPlayz, 1.9', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
-            .setColor('#dbce0d')
-            .setTitle('Pong!')
-            .addField('Your ping is,', '${m.createdTimestamp - message.createdTimestamp} ms or ${Math.round(client.ping)} ms', true)
-            .setFooter('By TCFPlayz, 1.9', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
-        message.channel.send(msc)
+        if (!message.content.startsWith(prefix)) return;
+        if (command === "ping") {
+          var ping = m.createdTimestamp - message.createdTimestamp;
+          var botPing = Math.round(bot.pi);
+          m.edit(`**:ping_pong: Pong! Your Ping Is:-**\n  ${ping}ms`);
     };
     if (command === 'help') {
         const hp = new Discord.MessageEmbed()
@@ -162,7 +157,7 @@ client.on('message', message => {
             .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
             .setTitle('Invite link.')
-            .addField('https://discord.com/api/oauth2/authorize?client_id=740846161539366912&permissions=8')
+            .addField('https://discord.com/api/oauth2/authorize?client_id=740846161539366912&permissions=8&scope=bot')
             .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
         message.channel.send(invite)
     };
