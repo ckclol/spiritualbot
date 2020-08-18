@@ -12,6 +12,7 @@ const pbhelp = new Discord.MessageEmbed()
 
 
 client.on("ready", () => {
+    client.user.setActivity(`Kingcraft`);
     console.log(`done, opened`);
 });
 
@@ -38,21 +39,18 @@ client.on('message', message => {
         if (!message.content.startsWith(prefix)) return;
         if (command === "ping") {
           const m = message.channel.send("Ping?");
-          var ping = m.createdTimestamp - message.createdTimestamp;
-          var botPing = Math.round(client.pi);
+          var ping = Date.now() - m.createdTimestamp + " ms";
           const ping2 = new Discord.MessageEmbed()
-            .setAuthor('TCFPlayz, 1.9', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
+            .setAuthor('TCFPlayz, 1.92', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
-            .setTitle(':ping_pong: Pong!', '', true)
-            .addField('Ping:', '${ping}ms!', true)
-            .setFooter('By TCFPlayz, 1.9', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
-            
-          
-          m.edit(`**:ping_pong: Pong! Your Ping Is:-**\n  ${ping}ms`);
+            .setTitle(':ping_pong: Pong!', true)
+              .addField('Ping:', `${Date.now() - message.createdTimestamp} ms!`, true)
+            .setFooter('By TCFPlayz, 1.92', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
+          message.channel.send(ping2)
     };
     if (command === 'help') {
         const hp = new Discord.MessageEmbed()
-            .setAuthor('TCFPlayz, 1.9', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
+            .setAuthor('TCFPlayz, 1.92', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
             .setTitle('Help')
             .setDescription('This is a place to tell you the commands.')
@@ -61,15 +59,14 @@ client.on('message', message => {
             .addField('Ping?', 'Ping! Please do /ping!', true)
             .addField('Invite.', 'Support ckc by inviting the bot!(do /invite)')
             .addField('Guilds.', 'check how many servers has kingcraftbot joined?', true)
-            .addField('ADMIN LIST(DEV)', '')
+            .addField('ADMIN LIST(DEV)', 'cat')
             .addField('Giveaways.', 'Still in development.', true)
             .addField('Challenges.', 'Still in development.', true)
-            .addField('Perks (DEV)', '')
+            .addField('Perks (DEV)', 'cat')
             .addField('Perks.', 'In development.', true)
             .addField('More', 'More in 2.0', true)
-            .setFooter('By TCFPlayz, 1.9', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
+            .setFooter('By TCFPlayz, 1.92', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
         message.channel.send(hp)
-       client.user.setActivity(`Minecraft`)
         console.log('Help')
     };
     if (command === 'members-help') {
@@ -77,7 +74,7 @@ client.on('message', message => {
             .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
             .setTitle('Member Help')
-            .setDescription('Which members you wanna inspect? (SMP)', '')
+            .setDescription('Which members you wanna inspect? (SMP)')
             .addField('Command', '/members {nickname}(tech as "TECH", Moses as "Moss")', true)
             .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
         message.channel.send(mh)
@@ -89,7 +86,7 @@ client.on('message', message => {
             .setColor('#dbce0d')
             .setTitle('Chaukachun edu.')
             .setDescription('The owner of this server, trash at lots of stuff.')
-            .addField('**SKILLS**', '')
+            .addField('**SKILLS**', '(tcfplayz)')
             .addField('Building', '70/100', true)
             .addField('Command', '100/100', true)
             .addField('Redstone', '79/100', true)
@@ -102,7 +99,7 @@ client.on('message', message => {
             .setColor('#dbce0d')
             .setTitle('Chaukachun123.')
             .setDescription('The no account in this server, good at lots of stuff.')
-            .addField('**SKILLS**', '')
+            .addField('**SKILLS**', '(e)')
             .addField('Building', '78/100', true)
             .addField('Command', '60/100', true)
             .addField('Redstone', '90/100', true)
@@ -116,7 +113,7 @@ client.on('message', message => {
             .setColor('#dbce0d')
             .setTitle('TechnicRain8.')
             .setDescription('The best in this server, good at everything.')
-            .addField('**SKILLS**', '')
+            .addField('**SKILLS**', '(bc)')
             .addField('Building', '100/100', true)
             .addField('Command', '60/100', true)
             .addField('Redstone', '98/100', true)
@@ -129,7 +126,7 @@ client.on('message', message => {
             .setColor('#dbce0d')
             .setTitle('Billyon133.')
             .setDescription('The noob in this server, cool but bad.')
-            .addField('**SKILLS**', '')
+            .addField('**SKILLS**', '(lyon)')
             .addField('Building', '100/100', true)
             .addField('Command', '10/100', true)
             .addField('Redstone', '60/100', true)
@@ -142,7 +139,7 @@ client.on('message', message => {
             .setColor('#dbce0d')
             .setTitle('CutSkydiver16.')
             .setDescription('The pvp master in this server, good at server games.')
-            .addField('**SKILLS**', '')
+            .addField('**SKILLS**', '(epic)', true)
             .addField('Building', '86/100', true)
             .addField('Command', '92/100', true)
             .addField('Redstone', '85/100', true)
@@ -156,7 +153,7 @@ client.on('message', message => {
             .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
             .setTitle('Facts')
-            .addField(facts[fact], '')
+            .addField(facts[fact], 'TRUE FACT')
             .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
         message.channel.send(factss)
     };
@@ -165,7 +162,7 @@ client.on('message', message => {
             .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
             .setTitle('Invite link.')
-            .addField('https://discord.com/api/oauth2/authorize?client_id=740846161539366912&permissions=8&scope=bot', '')
+            .addField('https://discord.com/api/oauth2/authorize?client_id=740846161539366912&permissions=8&scope=bot', 'DA LINK')
             .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
         message.channel.send(invite)
     };
@@ -175,7 +172,7 @@ client.on('message', message => {
             const gws = new Discord.messageEmbed()
                 .setAuthor('TCFPlayz, 1.9', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
                 .setColor('#dbce0d')
-                .setTitle(args[2])
+                .setTitle(args[2], 'by ${message.author}', true)
                 .addField(args[3], args[4], true)
                 .setFooter('By TCFPlayz, 1.9', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
             message.channel.send(gws)
@@ -188,7 +185,7 @@ client.on('message', message => {
             const gws = new Discord.messageEmbed()
                 .setAuthor('TCFPlayz, 1.9', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
                 .setColor('#dbce0d')
-                .setTitle(args[2])
+                .setTitle(args[2], 'by ${message.author}', true)
                 .addField(args[3], '24 hours', true)
                 .setFooter('By TCFPlayz, 1.9', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
             message.channel.send(gws)
