@@ -2,12 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require('./token.json');
 const prefix = '/'; 
-const pbhelp = new Discord.MessageEmbed()
-    .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
-    .setColor('#dbce0d')
-    .setTitle('Help')
-    .addField('do /pb {bot-name}, {reason}', 'space is replaced with -', true)
-    .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png');
+const fs = require("fs");
 
 
 
@@ -59,10 +54,10 @@ client.on('message', message => {
             .addField('Ping?', 'Ping! Please do /ping!', true)
             .addField('Invite.', 'Support ckc by inviting the bot!(do /invite)')
             .addField('Guilds.', 'check how many servers has kingcraftbot joined?', true)
-            .addField('ADMIN LIST(DEV)', ':')
+            .addField('ADMIN LIST(DEV)', 'cat')
             .addField('Giveaways.', 'Still in development.', true)
             .addField('Challenges.', 'Still in development.', true)
-            .addField('Perks (DEV)', ':')
+            .addField('Perks (DEV)', 'cat')
             .addField('Perks.', 'In development.', true)
             .addField('More', 'More in 2.0', true)
             .setFooter('By TCFPlayz, 1.92', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
@@ -80,7 +75,7 @@ client.on('message', message => {
         message.channel.send(mh)
         console.log('meh')
     };
-    if (command === 'members playz') {
+    if (command === 'members tcf/playz') {
         const ckc = new Discord.MessageEmbed()
             .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
             .setColor('#dbce0d')
@@ -147,7 +142,7 @@ client.on('message', message => {
         message.channel.send(ckc)
     };
     if (command === 'fact') {
-        var facts = ["Wolfy dude's name was from a call when ckc called him wolfy dude!", "Wolfy dude is also named 'wolfieduediewateriebrownie jakieboie'!", "There are 2 old members or just doesn't play bedrock anymore, cuz those two old members found bedrock impossible to break. They dont know about creative mode.", "Tech is called tech cuz tech is tech.", "Ckc, aka seekaesea.", "Some says tech's item is still in the nether in S2", "Kingcraft was made in 2020!", "Kingcraft have 5 members!", "We have weird nicknames!", "Moss stone was invented by moses because his nickname was moss!", "This community is cool!", "Moses is kinda noob", "Challenges was made by CUT AND WOLF!", "Giveaways are for the new pe.kcserver.ga", "Open kingcraft", "e", "More facts coming soon!", "Facts were from BCpig"];
+       fs.readdir(/list/factlist.js[]);
         var fact = Math.floor(Math.random() * facts.length);
         const factss = new Discord.MessageEmbed()
             .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
@@ -166,7 +161,18 @@ client.on('message', message => {
             .setFooter('By TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
         message.channel.send(invite)
     };
-};
+    if (command === 'challenges') {
+        if (member.roles.cache.some(role => role.name === 'Spiritowner')) {
+            if (!args.length) return message.channel.send('/challenges {title} {what challenge}')
+            const gws = new Discord.messageEmbed()
+                .setAuthor('TCFPlayz, 1.9', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
+                .setColor('#dbce0d')
+                .setTitle(args[2], 'by ${message.author}', true)
+                .addField(args[3], '24 hours', true)
+                .setFooter('By TCFPlayz, 1.9', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png')
+            message.channel.send(gws)
+
+        };
     }
 });
 client.login(config.token)   
