@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require('./token.json');
-const prefix = '/'; 
+const prefix = '/';
 const fs = require("fs");
 
 
@@ -142,7 +142,7 @@ client.on('message', message => {
         message.channel.send(ckc)
     };
     if (command === 'fact') {
-       fs.readdir(/list/factlist.js[]);
+       var facts = facts.fact;
         var fact = Math.floor(Math.random() * facts.length);
         const factss = new Discord.MessageEmbed()
             .setAuthor('TCFPlayz', 'https://cdn.discordapp.com/app-icons/740846161539366912/0bdd26256dedaee5994ade2e91bf9448.png', 'https://kcserver.ga')
@@ -176,4 +176,3 @@ client.on('message', message => {
     }
 });
 client.login(config.token)   
-
