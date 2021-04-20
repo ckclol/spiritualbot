@@ -4,8 +4,15 @@ const config = require('./token.json');
 const prefix = '/';
 var photo = 'https://cdn.discordapp.com/avatars/340022376924446720/e0cf487f4d8b4567f5f1898a5e7ab680.png?size=128';
 const util = require('minecraft-server-util');
-util.statusBedrock('119.237.148.51').then((response);
-var res = response;
+var res = null;
+util.statusBedrock('play.hypixel.net') // port is default 19132
+    .then((response) => {
+        console.log(response);
+        res = response;
+    })
+    .catch((error) => {
+        console.error(error);
+    });
 client.on("ready", () => {
     client.user.setActivity(`Server status:` + res);
     client.user.setPresence({
