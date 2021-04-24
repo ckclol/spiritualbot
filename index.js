@@ -37,5 +37,39 @@ while true do {
     });
     client.user.setActivity("Server status:" + res);
 }
+// role manager
+const r1 = "<:c_:833883908193910814>";
+const r2 = "<:java:833882995152781322>;
+const rol1 = "<@&833881657140183042>"; //bdr
+const rol2 = "<@&833882034564628480>"; //jav
+const dcembed = new Discord.MessageEmbed()
+	.setColor('#0099ff')
+	.setTitle('React here!')
+	.setURL('https://spmc.ml/')
+	.setAuthor('TCFPlayz', '', 'https://spmc.ml')
+	.addFields(
+		{ name: 'Bedrock', value: '<:c_:833883908193910814>', inline: true },
+		{ name: 'Java', value: '<:java:833882995152781322>', inline: true },
+	)
+	.setTimestamp()
+	.setFooter('By TCFPlayz');
+const channel = "833881081861898250)";
+// axtual part of rank manager
+const messageid = null;
+const reactionMessage = await messageid.channel.send(dcembed);
+    await reactionMessage.react(rol1);
+    await reactionMessage.react(rol2);
+    reactionMessage.awaitReactions(Filter, {max: 1, time: 30000, errors: ["time"]}).then(collected => {
+        const reaction = collected.first();
+        switch (reaction.emoji.name) {
+            case rol1:
+                if (message.member.roles.cache.has(rol1.id)) {return message.member.role.cache.send("You already have the role.")};
+                message.member.roles.add(rolq).then(message.role.cache.send("Role added!"));
+                break
+            case rol2:
+                if (message.member.roles.cache.has(rol2.id)) {return message.member.role.cache.send("You already have the role.")};
+                message.member.roles.add(rol2).then(message.role.cache.send("Role added!"));
+                break
+        }
 });
 client.login(config.token)
