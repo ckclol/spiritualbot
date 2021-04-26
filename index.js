@@ -5,7 +5,7 @@ const prefix = '/';
 var photo = 'https://cdn.discordapp.com/avatars/340022376924446720/e0cf487f4d8b4567f5f1898a5e7ab680.png?size=128';
 const util = require('minecraft-server-util');
 var res = null;
-util.statusBedrock('play.hypixel.net') // port is default 19132
+util.statusBedrock('mc.spmc.ml')
     .then((response) => {
         console.log(response);
         res = response;
@@ -33,6 +33,5 @@ client.on("guildCreate", guild => {
 });
 client.on("guildDelete", guild => {
     console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-});
-});
+});      
 client.login(config.token)
